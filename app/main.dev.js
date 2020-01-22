@@ -1,3 +1,4 @@
+import 'regenerator-runtime'
 import path from 'path'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { onStartServer, onStopServer, onCheckServer } from './ipc/server'
