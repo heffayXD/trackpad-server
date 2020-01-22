@@ -1,0 +1,51 @@
+/* Views */
+@import 'views/home';
+
+/* Components */
+@import 'components/toolbar';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow:hidden;
+  background-color: #111111;
+  color: #fff;
+  font-family: 'Roboto';
+  .view-wrapper {
+    height: calc(100vh - 49px);
+  }
+  main {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 49px);
+  }
+}
+
+p, h1, h2, h3, h4, h5, label {
+  user-select: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

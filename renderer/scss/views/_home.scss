@@ -1,0 +1,55 @@
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  .home-wrapper {
+    text-align: center;
+    button {
+      margin: 20px;
+      border: 2px solid #111;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 16px;
+      outline-color: #111;
+      background-color: #222;
+      &:hover {
+        cursor: pointer;
+        background-color: #333;
+      }
+      &:active {
+        background-color: #111;
+      }
+      
+    }
+    input {
+      border: none;
+      background-color: #222;
+      width: 100px;
+      padding: 10px;
+      color: #fff;
+      font-size: 16px;
+      outline-color: #111;
+      text-align: center;
+      &:hover {
+        background-color: #333;
+      }
+      &:focus {
+        background-color: #333;
+      }
+    }
+    p {
+  
+    }
+    #config {
+      width: 100%;
+    }
+    .online {
+      color: rgb(0, 255, 0);
+    }
+    .offline {
+      color: rgb(255, 0, 0);
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "trackpad",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "dev": "concurrently \"npm run dev-webpack\" \"npm run dev-electron\"",
+    "dev-electron": "cross-env NODE_ENV=development electron -r @babel/register ./app/main.dev.js",
+    "dev-webpack": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.renderer.js --mode development",
+    "build": "concurrently \"npm run build-renderer\" \"npm run build-main\"",
+    "pack": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "build-renderer": "cross-env NODE_ENV=production webpack --config ./webpack.config.renderer.js --mode production",
+    "build-main": "cross-env NODE_ENV=production webpack --config ./webpack.config.main.js --mode production",
+    "start": "cross-env NODE_ENV=production electron ./app/main.prod.js"
+  },
+  "author": "Jeff",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "core-js": "^3.4.8",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "robotjs": "^0.6.0",
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/register": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.2",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.4.0",
+    "electron": "^7.1.7",
+    "electron-builder": "^21.2.0",
+    "electron-rebuild": "^1.8.8",
+    "jest": "^24.9.0",
+    "node-sass": "^4.13.1",
+    "regenerator-runtime": "^0.13.3",
+    "sass-loader": "^8.0.0",
+    "standard": "^14.3.1",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "build": {
+    "appId": "dev.getoutofmyhouse.encrypt",
+    "productName": "re:Encrypt",
+    "files": [
+      "resources/",
+      "node_modules/",
+      "index.html",
+      "renderer.js",
+      "main.prod.js",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    }
+  }
+}
