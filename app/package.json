@@ -1,0 +1,11 @@
+{
+    "name": "trackpadserver",
+    "productName": "TrackPad Server",
+    "version": "0.1.0",
+    "description": "Server for the TrackPad application",
+    "main": "./main.prod.js",
+    "author": "Jeff",
+    "license": "ISC",
+    "scripts": {},
+    "dependencies": {}
+}

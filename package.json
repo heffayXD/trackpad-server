@@ -46,6 +46,7 @@
     "electron-builder": "^21.2.0",
     "electron-rebuild": "^1.8.8",
     "jest": "^24.9.0",
+    "node-loader": "^0.6.0",
     "node-sass": "^4.13.1",
     "regenerator-runtime": "^0.13.3",
     "sass-loader": "^8.0.0",
@@ -61,8 +62,8 @@
   },
   "_comment": "fsevent@1.2.9 is locked in to prevent broken builds on windows for v1.2.11",
   "build": {
-    "appId": "dev.getoutofmyhouse.encrypt",
-    "productName": "re:Encrypt",
+    "appId": "dev.getoutofmyhouse.trackpad",
+    "productName": "TrackPad Server",
     "files": [
       "resources/",
       "node_modules/",
