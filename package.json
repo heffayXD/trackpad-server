@@ -12,7 +12,8 @@
     "postinstall": "electron-builder install-app-deps",
     "build-renderer": "cross-env NODE_ENV=production webpack --config ./webpack.config.renderer.js --mode production",
     "build-main": "cross-env NODE_ENV=production webpack --config ./webpack.config.main.js --mode production",
-    "start": "cross-env NODE_ENV=production electron ./app/main.prod.js"
+    "start": "cross-env NODE_ENV=production electron ./app/main.prod.js",
+    "rebuild": "npm rebuild --runtime=electron --target=7.1.7 --disturl=https://atom.io/download/atom-shell --abi=72"
   },
   "author": "Jeff",
   "license": "ISC",
@@ -52,8 +53,13 @@
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-node-externals": "^1.7.2"
   },
+  "optionalDependencies": {
+    "fsevents": "1.2.9"
+  },
+  "_comment": "fsevent@1.2.9 is locked in to prevent broken builds on windows for v1.2.11",
   "build": {
     "appId": "dev.getoutofmyhouse.encrypt",
     "productName": "re:Encrypt",
